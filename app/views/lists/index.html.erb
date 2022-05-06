@@ -1,0 +1,20 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://p4.wallpaperbetter.com/wallpaper/872/906/514/light-movie-film-film-projector-wallpaper-preview.jpg);">
+  <div class="container">
+    <h1 class="d-flex justify-content-center">SAVE ANY KIND OF MOVIES</h1>
+    <br>
+    <%# <a class="btn btn-ghost" href="#">Find the best movies</a> %>
+  </div>
+</div>
+<br><br>
+<h1 class="d-flex justify-content-center"><strong>LISTS</strong></h1>
+<br>
+<div class= container>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://c1.wallpaperflare.com/preview/892/839/660/ciack-direction-director-film.jpg)">
+        <p><%= link_to list.name, list_path(list), {:style=>'color:#FFFFFF;', :class => "css_class"} %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+<br><br>

@@ -1,0 +1,15 @@
+<h1 class="d-flex justify-content-center">Please enter a new list:</h1>
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://c1.wallpaperflare.com/preview/892/839/660/ciack-direction-director-film.jpg);"> %>
+<br>
+  <div class="container">
+    <div class="d-flex justify-content-center">
+    <%= form_for(@list) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.submit %>
+    <% end %>
+    </div>
+  </div>
+  <br><br>
+<p class="d-flex justify-content-center"><%= link_to "Back to list", lists_path, class: "btn btn-primary"%></p>
+<%# </div> %>
