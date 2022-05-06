@@ -12,7 +12,7 @@
   <div class="cards">
     <% @lists.each do |list| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://c1.wallpaperflare.com/preview/892/839/660/ciack-direction-director-film.jpg)">
-        <p><%= link_to list.name, list_path(list), {:style=>'color:#FFFFFF;', :class => "css_class"} %></p>
+        <p><%= link_to list.name, root_path(list), {:style=>'color:#FFFFFF;', :class => "css_class"} %></p>
       </div>
     <% end %>
   </div>
