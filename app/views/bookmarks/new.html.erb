@@ -2,6 +2,7 @@
 
 <%= simple_form_for [ @list, @bookmark ] do |f| %>
   <%= f.input :comment %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.association :movie %>
   <div class="d-flex justify-content-center"><%= f.submit "Submit bookmark", class: "btn btn-primary" %></div>
 <% end %>

@@ -3,9 +3,9 @@
 <br>
   <div class="container">
     <div class="d-flex justify-content-center">
-    <%= form_for(@list) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+    <%= simple_form_for(@list) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.submit %>
     <% end %>
     </div>

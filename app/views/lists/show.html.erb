@@ -1,31 +1,48 @@
-<h2 class="d-flex justify-content-center">List name:</h2>
-<h3 class="d-flex justify-content-center"><%= @list.name %></h3>
-
-<ul class="list-group">
-  <% @list.movies.each do |movie| %>
-    <div class="list-group-item">
-      <li class="d-flex justify-content-center">TITLE:<%= movie.title %></li>
-      <li class="d-flex justify-content-center">OVERVIEW:<%= movie.overview %></li>
-      <li class="d-flex justify-content-center">URL:<%= movie.poster_url %></li>
-      <li class="d-flex justify-content-center">RATING:<%= movie.rating %></li>
-    </div>
-  <% end %>
-</ul>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.timeout.com/images/105630937/image.jpg);">
+</div>
 <br>
-<ul class="list-group">
-  <% @list.bookmarks.each do |bookmark| %>
-    <li class="list-group-item d-flex justify-content-center">
-    <%= bookmark.comment %>
-      <div class="d-flex justify-content-center">
-        <%= link_to "Delete",
-          bookmark_path(bookmark),
-          method: :delete,
-          data: { confirm: "Are you sure?" } %>
+<h2 class="d-flex justify-content-center"><%= @list.name %></h2>
+<br>
+<div class="container">
+  <div class="cards">
+    <ul class="list-group">
+      <% @list.movies.each do |movie| %>
+        <div class="list-group-item">
+          <li class="d-flex justify-content-center"><%= movie.title %></li>
+          <li class="d-flex justify-content-center"><%= movie.overview %></li>
+          <li class="d-flex justify-content-center"><%= movie.poster_url %></li>
+          <li class="d-flex justify-content-center"><%= movie.rating %></li>
         </div>
-      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="cards">
+    <ul class="list-group">
+      <% @list.bookmarks.each do |bookmark| %>
+        <li class="list-group-item d-flex justify-content-center">
+          <%= bookmark.comment %>
+          <div class="d-flex justify-content-center">
+            <%= link_to "Delete",
+              bookmark_path(bookmark),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<br>
+
+<p>
+<% @list.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
   <% end %>
-</ul>
+<p>
+
 <br>
 <p class="d-flex justify-content-center"><%= link_to 'Add a new bookmark', new_list_bookmark_path(@list) , class: "btn btn-primary"%></p>
-<br>
 <p class="d-flex justify-content-center"><%= link_to "Back to list", root_path , class: "btn btn-primary"%></p>

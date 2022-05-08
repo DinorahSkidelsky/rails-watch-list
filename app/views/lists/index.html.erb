@@ -1,6 +1,6 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://p4.wallpaperbetter.com/wallpaper/872/906/514/light-movie-film-film-projector-wallpaper-preview.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://estaticos.muyinteresante.es/uploads/images/gallery/58402b605cafe8877e8b456c/peliculas.jpg);">
   <div class="container">
-    <h1 class="d-flex justify-content-center">SAVE ANY KIND OF MOVIES</h1>
+    <h1 class="d-flex justify-content-end">SAVE ANY KIND OF MOVIES</h1>
     <br>
     <%# <a class="btn btn-ghost" href="#">Find the best movies</a> %>
   </div>
@@ -11,10 +11,22 @@
 <div class= container>
   <div class="cards">
     <% @lists.each do |list| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://c1.wallpaperflare.com/preview/892/839/660/ciack-direction-director-film.jpg)">
-        <p><%= link_to list.name, list_path(list), {:style=>'color:#FFFFFF;', :class => "css_class"} %></p>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.pinimg.com/736x/59/d8/72/59d8726a7542bb71f75c92e4da6dc819.jpg)">
+        <p><%= link_to list.name, list_path(list), {:style=>'color:#000000;', :class => "css_class"} %></p>
       </div>
     <% end %>
   </div>
 </div>
 <br><br>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This page is made with <i class="fas fa-heart"></i>
+  </div>
+</div>
