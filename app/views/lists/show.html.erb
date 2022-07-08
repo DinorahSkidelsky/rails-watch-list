@@ -1,8 +1,9 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.timeout.com/images/105630937/image.jpg);">
 </div>
 <br>
-<h2 class="d-flex justify-content-center"><%= @list.name %></h2>
+<h2 class="d-flex justify-content-center text-light"><%= @list.name %></h2>
 <br>
+
 <div class="container">
   <div class="cards">
     <ul class="list-group">
@@ -17,10 +18,15 @@
     </ul>
   </div>
 </div>
+
 <br>
+
 <div class="container">
   <div class="cards">
     <ul class="list-group">
+      <% @list.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
       <% @list.bookmarks.each do |bookmark| %>
         <li class="list-group-item d-flex justify-content-center">
           <%= bookmark.comment %>
@@ -36,12 +42,6 @@
   </div>
 </div>
 <br>
-
-<p>
-<% @list.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-<p>
 
 <br>
 <p class="d-flex justify-content-center"><%= link_to 'Add a new bookmark', new_list_bookmark_path(@list) , class: "btn btn-primary"%></p>
