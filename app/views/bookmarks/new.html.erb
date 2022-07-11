@@ -1,10 +1,20 @@
-<h1 class="d-flex justify-content-center">Add a new bookmark:</h1>
-
-<%= simple_form_for [ @list, @bookmark ] do |f| %>
-  <%= f.input :comment %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.association :movie %>
-  <div class="d-flex justify-content-center"><%= f.submit "Submit bookmark", class: "btn btn-dark" %></div>
-<% end %>
-<br>
-<p class="d-flex justify-content-center"><%= link_to "Back to list", root_path , class: "btn btn-dark"%></p>
+<div class="container py-5">
+  <div class="row">
+    <div class="col">
+      <%= image_tag("https://ae01.alicdn.com/kf/H4f3caed560ec421d82d2971ae57082288/10-Sheets-Retro-Paper-Texture-Standable-Movie-Themes-Film-Bookmarks-for-Reading-Pages-DIY-Book-Accessories.jpg_Q90.jpg_.webp", width: 600) %>
+    </div>
+    <div class="col py-5">
+      <div class="d-flex justify-content-center my-4">
+        <h1 class="letter d-flex justify-content-center">Add a new bookmark</h1>
+      </div>
+      <div class="letter d-flex justify-content-center my-3">
+        <%= simple_form_for [ @list, @bookmark ] do |f| %>
+          <%= f.input :comment %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.association :movie %>
+          <div class="d-flex justify-content-center"><%= f.submit "Save", class: "btn btn-warning my-3" %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
